@@ -1,0 +1,31 @@
+plugins {
+    id 'java'
+}
+
+group = 'co.istad'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+    // Source: https://mvnrepository.com/artifact/org.projectlombok/lombok
+    compileOnly 'org.projectlombok:lombok:1.18.42'
+    annotationProcessor 'org.projectlombok:lombok:1.18.42'
+
+    // Source: https://mvnrepository.com/artifact/org.nocrala.tools.texttablefmt/text-table-formatter
+    implementation 'org.nocrala.tools.texttablefmt:text-table-formatter:1.2.4'
+
+    // Source: https://mvnrepository.com/artifact/org.postgresql/postgresql
+    implementation 'org.postgresql:postgresql:42.7.11'
+
+}
+
+test {
+    useJUnitPlatform()
+}
